@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioPageComponent } from './inicio-page/inicio-page.component';
 import { LoginComponent } from './login/login.component';
-import {BlogComponent} from './blog/blog.component'
+import { BlogComponent } from './blog/blog.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 
 

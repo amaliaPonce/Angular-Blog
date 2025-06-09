@@ -3,30 +3,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
-import { environment } from '../enviroments/enviroment';
+import { environment } from '../environments/environment';
+import {
+  Article,
+  ArticleResponse,
+  ArticleCreationData,
+} from './models/article.model';
 
-interface Article {
-  id: number;
-  title: string;
-  content: string;
-  created_at: string;
-  author_id: number;  // Cambiado a number
-  image_url: string;
-}
-
-interface ArticleResponse {
-  articles: Article[];
-  totalCount: number;
-}
-
-interface ArticleCreationData {
-  title: string;
-  content: string;
-  author_id: number;
-  category_id: number;
-  image_url: string;
-  imageFile: File;
-}
 
 @Injectable({
   providedIn: 'root',
