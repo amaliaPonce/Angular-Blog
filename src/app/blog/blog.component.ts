@@ -4,6 +4,11 @@ import { BlogService } from '../blog.service';
 import { catchError, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
+import {
+  Article,
+  ArticleCreationData,
+  ArticleResponse,
+} from '../models/article.model';
 
 @Component({
   selector: 'app-blog',
@@ -122,27 +127,4 @@ export class BlogComponent implements OnInit {
   toggleCategoryForm() {
     this.showCategoryForm = !this.showCategoryForm;
   }
-}
-
-interface Article {
-  id: number;
-  title: string;
-  content: string;
-  created_at: string;
-  author_id: number;
-  image_url: string;
-}
-
-interface ArticleResponse {
-  articles: Article[];
-  totalCount: number;
-}
-
-interface ArticleCreationData {
-  title: string;
-  content: string;
-  author_id: number;
-  category_id: number;
-  image_url: string;
-  imageFile: File;
 }

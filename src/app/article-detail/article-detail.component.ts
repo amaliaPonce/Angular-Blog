@@ -4,18 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BlogService } from '../blog.service';
 import { catchError } from 'rxjs/operators';
-
-interface Article {
-  id: number;
-  title: string;
-  content: string;
-image_url: string;
-created_at: string;
-}
-
-interface ArticleResponse {
-  articles: Article[];
-}
+import { Article, ArticleResponse } from '../models/article.model';
 
 @Component({
   selector: 'app-article-detail',
